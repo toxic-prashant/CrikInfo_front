@@ -1,0 +1,22 @@
+<div class="  ">
+
+    <div class="flex flex-wrap">
+        <h1 class="text-4xl font-extrabold text-gray-800  ">Live Cricket Score</h1>
+        <button (click)="refreshScore()" class="ml-auto px-3 py-2 bg-blue-500 hover:bg-blue-700 rounded-full text-white">Refresh</button>    
+    </div>
+       <div class="items-stretch card-container flex-wrap flex-col md:flex-row flex">
+        @for (match of liveMatches; track $index) 
+    {
+        <!-- {{match.teamHeading}}
+        <br>
+        {{$index}} -->
+        <div class="p-2 md:w-[25%] w-full">
+            <app-match-card [match]="match"></app-match-card>
+        </div>
+    }
+    @empty {
+        there is no match!!
+    }
+    </div>
+
+</div>
